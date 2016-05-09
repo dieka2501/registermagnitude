@@ -20,3 +20,4 @@ Route::get('/print/{id}', 'pdfController@index');
 Route::get('/test/pdf', 'registerController@index');
 
 Route::get('/email/thanks', 'emailController@comming');
+Route::get('/email/miss', 'emailController@not_coming');
