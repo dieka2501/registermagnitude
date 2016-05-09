@@ -117,7 +117,7 @@ class registerController Extends BaseController{
 				$view['perusahaan'] 			= $getdata->perusahaan;
 				$view['posisi'] 				= $getdata->jabatan;
 				
-				$viewhtml = View::make('pdf.index',$view);
+				$viewhtml = View::make('pdf.indexa8',$view);
 				// $html ="<table>"
 				PDF::SetTitle($getdata->nama_visitor);
 				PDF::AddPage('P');
@@ -184,7 +184,7 @@ class registerController Extends BaseController{
 					$view['perusahaan'] 			= $company;
 					$view['posisi'] 				= $position;
 					
-					$viewhtml = View::make('pdf.index',$view);
+					$viewhtml = View::make('pdf.indexa8',$view);
 					// $html ="<table>"
 					PDF::SetTitle($name);
 					PDF::AddPage('P');
