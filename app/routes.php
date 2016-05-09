@@ -18,3 +18,5 @@ Route::post('/register', 'registerController@add');
 Route::post('/preview', 'previewController@index');
 Route::get('/print/{id}', 'pdfController@index');
 Route::get('/test/pdf', 'registerController@index');
+
+Route::get('/email/thanks', 'emailController@comming');
