@@ -35,8 +35,8 @@ class verifyController Extends BaseController{
 					$message->from('no-reply@data-driven.asia','Admin');
 					// $message->getSwiftMessage()->getHeaders()->addTextHeader('MIME-version: 1.0\n', 'Content-type: text/html; charset= iso-8859-1\n');
 
-					$message->to($detail['email'])->subject($detail['subject']);
-					// ->attach(public_path().'/pdf/'.str_replace(" ",'',$detail['nama']).'.pdf');
+					$message->to($detail['email'])->subject($detail['subject'])
+					->attach(public_path().'/pdf/'.str_replace(" ",'',$detail['nama']).'.pdf');
 				});
 				echo "<h1>Verifikasi data anda berhasil, silakan tutup jendela web ini, terima kasih.</h1>";	
 			}else{
