@@ -6,7 +6,7 @@ class verifyController Extends BaseController{
 	}
 
 	function confirm(){
-		if(input::has('key')){
+		if(Input::has('key')){
 			$key 				= Input::get('key');
 			$get_profile 		= $this->profile->get_key($key);
 			if(count($get_profile) >0){
