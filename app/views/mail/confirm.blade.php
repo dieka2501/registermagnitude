@@ -74,7 +74,7 @@
 	  			<p style="font-size: 11px;
     	color: #555555;">Halo {{$nama}},</p>
 	  			<p style="font-size: 11px;
-    	color: #555555;">Anda telah mendaftar sebagai peserta <i>technical meeting</i> IndoBuildTech 2016.</p>
+    	color: #555555;">Anda telah mendaftar sebagai pengunjung IndoBuildTech 2016.</p>
 	  			<p style="font-size: 11px;
     	color: #555555;">Silahkan cetak file yang kami sertakan dalam email ini.</p>
 	  			<div class="details" style="background: #E9F0FA;

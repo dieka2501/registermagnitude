@@ -38,7 +38,10 @@ class verifyController Extends BaseController{
 					$message->to($detail['email'])->subject($detail['subject'])
 					->attach(public_path().'/pdf/'.str_replace(" ",'',$detail['nama']).'.pdf');
 				});
-				echo "<h1>Verifikasi data anda berhasil, silakan tutup jendela web ini, terima kasih.</h1>";	
+				$dataupdate['status'] 		= 1;
+				$dataupdate['updated_at'] 	= date('Y-m-d H:i:s');
+				$this->profile->edit($get_profile->id,$dataupdate);
+				echo "<h1>Verifikasi $get_profile->iddata anda berhasil, silakan tutup jendela web ini, terima kasih.</h1>";	
 			}else{
 				echo "<h1>Ada kesalahan proses, <i>key</i> tidak diketemukan.</h1>";	
 			}
