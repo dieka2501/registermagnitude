@@ -119,18 +119,18 @@ body {
 							<label>Address</label>
 							<textarea placeholder="Enter Address Here.." rows="3" class="form-control" name='address' id='address' readonly="readonly"><?php echo $address ?></textarea>
 						</div>
-			
-						<div class="form-group">
-							<label>City / Region</label>
-							<!-- <textarea placeholder="Enter city / region Here.." rows="3" class="form-control" name='region' id='region'></textarea> -->
-							<input type="text" placeholder="Enter city / region Here.." class="form-control" name="region" id='region' readonly="readonly" value="<?php echo $region ?>">
-						</div>		
 						<div class="row">		
 							<div class="col-sm-12 form-group">
 								<label>Country</label>
 								<input type="text" placeholder="Enter Country Here.." class="form-control" name="country" id='country' readonly="readonly" value="<?php echo $country ?>">
 							</div>	
 						</div>
+						<div class="form-group">
+							<label>City / Region</label>
+							<!-- <textarea placeholder="Enter city / region Here.." rows="3" class="form-control" name='region' id='region'></textarea> -->
+							<input type="text" placeholder="Enter city / region Here.." class="form-control" name="region" id='region' readonly="readonly" value="<?php echo $region ?>">
+						</div>		
+						
 						<div class="row">		
 							<div class="col-sm-12 form-group">
 								<label>Position</label>

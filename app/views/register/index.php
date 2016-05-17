@@ -255,6 +255,7 @@ body {
 			}else{
 				$('#region').show();
 				$('#country-text').hide();				
+				$('#country-text').val("");
 				$('#region-text').hide();
 			}
 		});
@@ -265,6 +266,7 @@ body {
 				$('#region-text').show();				
 			}else{
 				$('#region-text').hide();				
+				$('#region-text').val('');
 			}
 		});
 
@@ -275,16 +277,7 @@ body {
 				$('#position-text').show();				
 			}else{
 				$('#position-text').hide();				
-			}
-		});
-
-		$('#position-text').hide();
-		$('#position').change(function(){
-			var position = $(this).val();
-			if(position == 'other'){
-				$('#position-text').show();				
-			}else{
-				$('#position-text').hide();				
+				$('#position-text').val('');
 			}
 		});
 
@@ -295,6 +288,7 @@ body {
 				$('#lob-text').show();				
 			}else{
 				$('#lob-text').hide();				
+				$('#lob-text').val('');
 			}
 		});						
 
@@ -305,6 +299,7 @@ body {
 				$('#nb-text').show();				
 			}else{
 				$('#nb-text').hide();				
+				$('#nb-text').val('');
 			}
 		});
 
@@ -315,6 +310,7 @@ body {
 				$('#purpose-text').show();				
 			}else{
 				$('#purpose-text').hide();				
+				$('#purpose-text').val('');
 			}
 		});						
 
@@ -324,7 +320,8 @@ body {
 			if(source == 'other'){
 				$('#source-text').show();				
 			}else{
-				$('#source-text').hide();				
+				$('#source-text').hide();
+				$('#source-text').val('');				
 			}
 		});						
 
