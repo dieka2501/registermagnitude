@@ -11,7 +11,7 @@ class verifyController Extends BaseController{
 			$get_profile 		= $this->profile->get_key($key);
 			if(count($get_profile) >0){
 				//Generate QRCODE
-				QrCode::format('png')->size(100)->generate($ids,'../assets/qr/'.str_replace(" ",'',$get_profile->nama_visitor).'.png');
+				QrCode::format('png')->size(100)->generate($get_profile->id,'../assets/qr/'.str_replace(" ",'',$get_profile->nama_visitor).'.png');
 				//END Generare QRCODE
 				//Generate PDF
 				$view['name'] 					= $get_profile->nama_visitor;
