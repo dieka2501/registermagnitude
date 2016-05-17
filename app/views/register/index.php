@@ -169,15 +169,15 @@ body {
 								<input type="text" placeholder="Enter Line Of Bussiness Here.." class="form-control" name='lob-text' id="lob-text" value="<?php echo $lob?>">
 							</div>
 						</div>
-						<div class="form-group">
+						<!-- <div class="form-group">
 							<label>Nature Bussiness</label>
 							<div class="form-group">
-								<?php echo Form::select('nb',$arr_business,$nb,['class'=>'form-control','id'=>'nb'])?>
+								<?php //echo Form::select('nb',$arr_business,$nb,['class'=>'form-control','id'=>'nb'])?>
 							</div>
 							<div class="form-group">
-								<input type="text" placeholder="Enter Nature Bussiness Here.." class="form-control" name='nb-text' id="nb-text" value="<?php echo $nb?>">
+								<input type="text" placeholder="Enter Nature Bussiness Here.." class="form-control" name='nb-text' id="nb-text" value="<?php //echo $nb?>">
 							</div>
-						</div>
+						</div> -->
 						<div class="form-group">
 							<label>Purpose / Need</label>
 							<div class="form-group">

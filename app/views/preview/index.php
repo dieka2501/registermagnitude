@@ -145,10 +145,10 @@ body {
 							<label>Line Of Bussiness</label>
 							<input type="text" placeholder="Enter Line Of Bussiness Here.." class="form-control" name='lob' id="lob" readonly="readonly" value="<?php echo $lob ?>">
 						</div>
-						<div class="form-group">
+						<!-- <div class="form-group">
 							<label>Nature Bussiness</label>
-							<input type="text" placeholder="Enter Nature Bussiness Here.." class="form-control" name='nb' id="nb" readonly="readonly" value="<?php echo $nb ?>">
-						</div>
+							<input type="text" placeholder="Enter Nature Bussiness Here.." class="form-control" name='nb' id="nb" readonly="readonly" value="<?php //echo $nb ?>">
+						</div> -->
 						<div class="form-group">
 							<label>Purpose / Need</label>
 							<input type="text" placeholder="Enter Your Purpose / Need Here.." class="form-control" name='purpose' id="purpose" readonly="readonly" value="<?php echo $purpose ?>">

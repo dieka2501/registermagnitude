@@ -20,12 +20,13 @@
 <body>
 
 	<div>
-		<table border="0" width="40%" >
+		<table border="0" width="90%" >
 			<tr>
 				<td  width="50%" align="center" valign="top" height=""> 
 					<p><strong><?php echo $name?></strong></p>
 					<p><strong><?php echo $perusahaan?></strong></p>
 					<p><strong><?php echo $posisi?></strong></p>
+					<p><strong><?php echo $undian?></strong></p>
 				</td>
 				<td width="50%">
 					<img src="<?php echo Config::get('app.url')?>assets/qr/<?php echo str_replace(' ','',$name).'.png' ?>" width="600px" height="600px">

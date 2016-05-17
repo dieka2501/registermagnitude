@@ -29,7 +29,7 @@ class pdfController Extends BaseController{
 		PDF::SetTitle($data->nama_visitor);
 		PDF::setPrintHeader(false);
 		PDF::setPrintFooter(false);
-		PDF::AddPage('P',"A4");
+		PDF::AddPage('P',"A6");
 		// PDF::SetFont('times','B',20);
 		// PDF::Image(Config::get("app.url").'assets/image/bagde-kosong.jpg', 0, 0, 286, 400, '', '', '', true, 300, '', false, false, 0);
 		// // PDF::setX(50);

@@ -87,6 +87,7 @@ class registerController Extends BaseController{
 				$purpose 		= Input::get('purpose');
 				$position 		= Input::get('position');
 				$source 		= Input::get('source');
+				$keyactive 		= md5($email.date('Ymdhis'));
 				$profile['interest_product']	= implode(',', $kategori);
 				$profile['bidang'] 				= $lob;
 				$profile['username'] 			= $email;
@@ -101,7 +102,7 @@ class registerController Extends BaseController{
 				$profile['purpose']				= $purpose;
 				$profile['jabatan']				= $position;
 				$profile['source_information']	= $source;
-				// $profile['verify']	 		= $pass;
+				$profile['key'] 		 		= $keyactive;
 				$profile['date_modified']		= date('Y-m-d H:i:s');
 				$profile['updated_at']			= date('Y-m-d H:i:s');
 				$idsprofile = $this->profile->edit($ids,$profile);
@@ -127,15 +128,15 @@ class registerController Extends BaseController{
 				PDF::writeHTML($viewhtml,true, false, true, false,'');
 				PDF::Output(public_path().'/pdf/'.str_replace(" ",'',$getdata->nama_visitor).'.pdf','F');
 				//END Generate PDF
-				$data 	= ['nama'=>$getdata->nama_visitor,'link'=>"#"];
-				$detail = ['email'=>$getdata->email,'subject'=>'Registration Confirm '.$getdata->nama_visitor,'nama'=>$getdata->nama_visitor];
+				$data 	= ['nama'=>$getdata->nama_visitor,'link'=>Config::get('app.url').'public/registration/confirm?key='.$keyactive];
+				$detail = ['email'=>$getdata->email,'subject'=>'REGISTRATION CONFIRM '.$getdata->nama_visitor,'nama'=>$getdata->nama_visitor];
 
-				Mail::send('mail.confirm',$data,function($message) use ($detail){
+				Mail::send('mail.linkverify',$data,function($message) use ($detail){
 					$message->from('no-reply@data-driven.asia','Admin');
 					// $message->getSwiftMessage()->getHeaders()->addTextHeader('MIME-version: 1.0\n', 'Content-type: text/html; charset= iso-8859-1\n');
 
-					$message->to($detail['email'])->subject($detail['subject'])
-					->attach(public_path().'/pdf/'.str_replace(" ",'',$detail['nama']).'.pdf');
+					$message->to($detail['email'])->subject($detail['subject']);
+					// ->attach(public_path().'/pdf/'.str_replace(" ",'',$detail['nama']).'.pdf');
 				});
 				$json = array('status'=>true,
 								'alert'=>'Proses Registrasi Berhasil.',
@@ -154,6 +155,7 @@ class registerController Extends BaseController{
 				$purpose 		= Input::get('purpose');
 				$position 		= Input::get('position');
 				$source 		= Input::get('source');
+				$keyactive 		= md5($email.date('Ymdhis'));
 				$pass 			= substr(md5($email.date('Ymdhis')), 0,5);
 				// $cekemail 		= $this->profile->get_email($email);
 				if(true){
@@ -172,6 +174,7 @@ class registerController Extends BaseController{
 					$profile['purpose']				= $purpose;
 					$profile['jabatan']				= $position;
 					$profile['verify']	 			= $pass;
+					$profile['key']		 			= md5($email.date('Ymdhis'));;
 					$profile['source_information']	= $source;
 					$profile['date_created']	= date('Y-m-d H:i:s');
 					$profile['created_at']		= date('Y-m-d H:i:s');
@@ -183,6 +186,7 @@ class registerController Extends BaseController{
 					$view['name'] 					= $name;
 					$view['perusahaan'] 			= $company;
 					$view['posisi'] 				= $position;
+					$view['undian'] 				= 000000;
 					
 					$viewhtml = View::make('pdf.indexa8',$view);
 					// $html ="<table>"
@@ -201,13 +205,13 @@ class registerController Extends BaseController{
 						$user['group'] 			= 3;
 						$user['date_created']	= $profile['date_created'];
 						// $this->user->add($user);
-						$data 	= ['nama'=>$name,'link'=>Config::get('app.url').'public/verify/'.$pass];
-						$detail = ['email'=>$email,'subject'=>'Registration Confirm '.$name,'nama'=>$name];
-						Mail::send('mail.confirm',$data,function($message) use ($detail){
+						$data 	= ['nama'=>$name,'link'=>Config::get('app.url').'public/registration/confirm?key='.$keyactive];
+						$detail = ['email'=>$email,'subject'=>'REGISTRATION CONFIRM '.$name,'nama'=>$name];
+						Mail::send('mail.linkverify',$data,function($message) use ($detail){
 							$message->from('no-reply@data-driven.asia','Admin');
 							// $message->getSwiftMessage()->getHeaders()->addTextHeader('MIME-version: 1.0\n', 'Content-type: text/html; charset= iso-8859-1\n');
-							$message->to($detail['email'])->subject($detail['subject'])
-							->attach(public_path().'/pdf/'.str_replace(" ",'',$detail['nama']).'.pdf');
+							$message->to($detail['email'])->subject($detail['subject']);
+							// ->attach(public_path().'/pdf/'.str_replace(" ",'',$detail['nama']).'.pdf');
 						});
 						$getprofile = $this->profile->getid($idsprofile);
 						$curl['name'] 					= $getprofile->nama_visitor;

@@ -20,4 +20,7 @@ class profileVisitor Extends Eloquent{
 	function delete_email($email){
 		return profileVisitor::where('email',$email)->delete();
 	}
+	function get_key($key){
+		return profileVisitor::where('key',$key)->first();
+	}
 }
