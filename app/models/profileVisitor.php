@@ -23,4 +23,7 @@ class profileVisitor Extends Eloquent{
 	function get_key($key){
 		return profileVisitor::where('key',$key)->first();
 	}
+	function get_one(){
+		return profileVisitor::orderBy('id','DESC')->where('undian','!=','')->first();
+	}
 }

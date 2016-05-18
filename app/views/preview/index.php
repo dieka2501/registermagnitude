@@ -114,6 +114,10 @@ body {
 								<label>Company</label>
 								<input type="text" placeholder="Enter Company Name Here.." class="form-control" name='company' id='company' readonly="readonly" value="<?php echo $company ?>">
 							</div>
+						</div>
+						<div class="form-group">
+							<label>Phone Number</label>
+							<input type="text" placeholder="Enter Phone Number Here.." class="form-control" name='phone_number' id="phone_number" readonly="readonly" value="<?php echo $phone_number ?>">
 						</div>					
 						<div class="form-group">
 							<label>Address</label>
@@ -137,10 +141,7 @@ body {
 								<input type="text" placeholder="Enter Your Position Here.." class="form-control" name="position" id='position' readonly="readonly" value="<?php echo $position ?>">
 							</div>	
 						</div>						
-						<div class="form-group">
-							<label>Phone Number</label>
-							<input type="text" placeholder="Enter Phone Number Here.." class="form-control" name='phone_number' id="phone_number" readonly="readonly" value="<?php echo $phone_number ?>">
-						</div>
+						
 						<div class="form-group">
 							<label>Line Of Bussiness</label>
 							<input type="text" placeholder="Enter Line Of Bussiness Here.." class="form-control" name='lob' id="lob" readonly="readonly" value="<?php echo $lob ?>">

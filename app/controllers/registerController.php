@@ -107,9 +107,9 @@ class registerController Extends BaseController{
 				$profile['updated_at']			= date('Y-m-d H:i:s');
 				$idsprofile = $this->profile->edit($ids,$profile);
 				$getdata 	= $this->profile->getid($ids);
-				$json = array('status'=>true,
-							'alert'=>'Proses Registasi Berhasil.',
-							'data'=>$getdata);
+				// $json = array('status'=>true,
+				// 			'alert'=>'Proses Registasi Berhasil.',
+				// 			'data'=>$getdata);
 				//Generate QRCODE
 				QrCode::format('png')->size(100)->generate($ids,'../assets/qr/'.str_replace(" ",'',$getdata->nama_visitor).'.png');
 				//END Generare QRCODE
@@ -138,6 +138,28 @@ class registerController Extends BaseController{
 					$message->to($detail['email'])->subject($detail['subject']);
 					// ->attach(public_path().'/pdf/'.str_replace(" ",'',$detail['nama']).'.pdf');
 				});
+
+				//Generate undian
+				$last = 1 ;
+				if($getdata->undian == ""){
+					$getlast = $this->profile->get_one();
+					if(count($getlast) > 0){
+						if($getlast->undian == ""){
+							$last += 0;
+						}else{
+							$last = $getlast->undian + 1;
+						}	
+					}
+					
+				}
+				$viewundian 		= "";
+				if($last <= 10){
+					$undian['undian'] 		= $last;
+					$undian['updated_at'] 	= date('Y-m-d H:i:s');
+					$this->profile->edit($getdata->id,$undian);
+					$viewundian 			= $last;
+				}
+
 				$json = array('status'=>true,
 								'alert'=>'Proses Registrasi Berhasil.',
 								'data'=>$getdata);
@@ -160,6 +182,26 @@ class registerController Extends BaseController{
 				// $cekemail 		= $this->profile->get_email($email);
 				if(true){
 					$this->profile->delete_email($email);
+					//Generate undian
+					$last = 1 ;
+					if(true){
+						$getlast = $this->profile->get_one();
+						if(count($getlast) > 0){
+							if($getlast->undian == ""){
+								$last += 0;
+							}else{
+								$last = $getlast->undian + 1;
+							}	
+						}
+						
+					}
+					$viewundian 		= "";
+					if($last <= 10){
+						$profile['undian'] 		= $last;
+						$viewundian 			= $last;
+					}else{
+						$profile['undian'] 		= "";
+					}
 					$profile['interest_product']    = implode(',', $kategori);
 					$profile['bidang'] 				= $lob;
 					$profile['username'] 			= $email;
@@ -228,6 +270,7 @@ class registerController Extends BaseController{
 						$curl['company']				= $getprofile->perusahaan;
 						$jsoncurl 						= json_encode($curl);
 						$this->curl->post(Config::get('app.url_mailblast').'public/api/receiver/create',$jsoncurl);
+						
 						$json = array('status'=>true,
 								'alert'=>'Proses Registrasi Berhasil.',
 								'data'=>$getprofile);	

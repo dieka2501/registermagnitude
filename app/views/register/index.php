@@ -117,12 +117,12 @@ body {
 							</div>
 						</div>					
 						<div class="form-group">
-							<label>Address</label>
-							<textarea placeholder="Enter Address Here.." rows="3" class="form-control" name='address' id='address'><?php echo $address?></textarea>
-						</div>
-						<div class="form-group">
 							<label>Phone Number</label>
 							<input type="text" placeholder="Enter Phone Number Here.." class="form-control" name='phone_number' id="phone_number" value="<?php echo $phone_number?>" required>
+						</div>
+						<div class="form-group">
+							<label>Address</label>
+							<textarea placeholder="Enter Address Here.." rows="3" class="form-control" name='address' id='address'><?php echo $address?></textarea>
 						</div>
 						<div class="row">		
 							<div class="col-sm-12 form-group">
