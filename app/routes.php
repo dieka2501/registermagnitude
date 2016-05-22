@@ -16,6 +16,7 @@ Route::post('/', 'registerController@index');
 Route::post('/validemail', 'registerController@valid_email');
 Route::post('/register', 'registerController@add');
 Route::post('/preview', 'previewController@index');
+Route::get('/preview', 'registerController@index');
 Route::get('/print/{id}', 'pdfController@index');
 Route::get('/test/pdf', 'registerController@index');
 // http://198.211.116.172/registermagnitude/public/registration/confirm?key=2297aea7107a2828a896c22459b17226
