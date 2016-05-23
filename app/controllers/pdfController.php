@@ -32,7 +32,7 @@ class pdfController Extends BaseController{
 		PDF::AddPage('P',"A6");
 		// PDF::SetFont('times','B',20);
 		// PDF::Image(Config::get("app.url").'assets/image/bagde-kosong.jpg', 0, 0, 286, 400, '', '', '', true, 300, '', false, false, 0);
-		// // PDF::setX(50);
+		// PDF::setX(1000);
 		PDF::writeHTML($viewhtml,true, false, true, false,'L');
 		PDF::Output(public_path().'/pdf/'.str_replace(" ",'',$data->nama_visitor).'.pdf','FI');
 		// return View::make('pdf.indexa8',$view);
