@@ -19,8 +19,26 @@
 </head>
 <body>
 
-	<div>
+	<div style="margin-top:200px;">
 		<table border="0" width="90%" >
+			<tr>
+				<td  width="50%" align="center" valign="top" height="300px"> 		
+				</td>
+				<td width="50%">
+				</td>
+			</tr>
+			<tr>
+				<td  width="50%" align="center" valign="top" height=""> 		
+				</td>
+				<td width="50%">
+				</td>
+			</tr>
+			<tr>
+				<td  width="50%" align="center" valign="top" height=""> 		
+				</td>
+				<td width="50%">
+				</td>
+			</tr>
 			<tr>
 				<td  width="50%" align="center" valign="top" height=""> 
 					<p><strong><?php echo $name?></strong></p>
