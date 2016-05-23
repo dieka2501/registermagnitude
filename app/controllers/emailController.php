@@ -49,7 +49,8 @@ class emailController Extends BaseController{
         $view['checkin']            = count($chekin_today);
         $view['verifikasi']         = count($valid_email);
         $view['total_visitor']      = count($regis_all);
-        $receiver                   = ['dieka.koes@gmail.com'];
+        $receiver                   = ['dieka.koes@gmail.com','dikdik@data-driven.asia','bagja@data-driven.asia','bintang0274@gmail.com','vibiadhisp@gmail.com',
+                                        'vibiadhisp@data-driven.asia','bintang@data-driven.asia','imran@data-driven.asia'];
         
         Mail::send('mail.reportdaily',$view,function($m) use ($receiver){
                     $m->from('no-reply@data-driven.asia','Admin')
