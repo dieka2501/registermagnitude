@@ -39,4 +39,23 @@ class emailController Extends BaseController{
                
         }
     }
+
+    function report_daily(){
+        $chekin_today   = $this->ce->get_checkin_today();
+        $regis_today    = $this->visitor->get_today();
+        $regis_all      = $this->visitor->get_all();
+        $valid_email    = $this->visitor->status_verify();
+        $view['total_registrasi']   = count($regis_today);
+        $view['checkin']            = count($chekin_today);
+        $view['verifikasi']         = count($valid_email);
+        $view['total_visitor']      = count($regis_all);
+        $receiver                   = ['dieka.koes@gmail.com'];
+        
+        Mail::send('mail.reportdaily',$view,function($m) use ($receiver){
+                    $m->from('no-reply@data-driven.asia','Admin')
+                        ->to($receiver)
+                        ->subject('Laporan Harian Magnitude.');
+                });    
+        return View::make('mail.reportdaily',$view);
+    }
 }

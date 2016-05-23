@@ -24,3 +24,4 @@ Route::get('/registration/confirm', 'verifyController@confirm');
 
 Route::get('/email/thanks', 'emailController@comming');
 Route::get('/email/miss', 'emailController@not_coming');
+Route::get('/email/report', 'emailController@report_daily');

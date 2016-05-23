@@ -26,4 +26,14 @@ class profileVisitor Extends Eloquent{
 	function get_one(){
 		return profileVisitor::orderBy('id','DESC')->where('undian','!=','')->first();
 	}
+	function get_today(){
+		return profileVisitor::orderBy('id','DESC')->where('created_at','like','%'.date('Y-m-d').'%')->get();
+	}
+	function get_all(){
+		return profileVisitor::all();
+	}
+
+	function status_verify(){
+		return profileVisitor::orderBy('id','DESC')->where('status',1)->get();
+	}
 }
