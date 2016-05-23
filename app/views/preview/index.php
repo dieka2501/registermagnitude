@@ -92,6 +92,16 @@ body {
 </head>
 <body>
 <div class="container">
+	<div class="row">
+		<div class="col-md-6 text-left ">
+			<img src="<?php echo Config::get('app.url')?>assets/image/ibt.jpg" width="200" class='img-responsive'>
+		</div>
+ 		<div class="col-md-6 text-right">
+			<img src="<?php echo Config::get('app.url')?>assets/image/dite.jpg" width="240" class='img-responsive'>
+		</div>
+	</div>
+</div>
+<div class="container">
     <h1 class="well">Preview Visitor's Identity</h1>
 	<div class="col-lg-12 well">
 	<div class="row">
