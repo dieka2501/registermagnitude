@@ -74,7 +74,7 @@
 	  			<p style="font-size: 11px;
     	color: #555555;">Halo <?php echo $name?>,</p>
 	  			<p style="font-size: 11px;
-    	color: #555555;">Terima kasih telah menghadiri acara <i>Technical Meeting</i> untuk pameran IndoBuildTech 2016.</p>
+    	color: #555555;">Terima kasih telah menghadiri pameran IndoBuildTech 2016.</p>
 	  			<p style="font-size: 11px;
     	color: #555555;"></p>
 	  			<div class="details" style="background: #E9F0FA;

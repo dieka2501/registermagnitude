@@ -179,11 +179,12 @@ body {
 						
 						<div class='row'>
 							<div class='col-sm-6'>
-								<button type="button" class="btn btn-lg btn-info" id='btn-submit'>Confirm</button>							
+								
+								<button type="button" class="btn btn-lg btn-danger" id='btn-back'>Back</button>
 							</div>
 							<div class='col-sm-6 text-right'>
 								<!-- <a href="<?php echo Config::get('app.url')?>public/" class="btn btn-lg btn-danger" >Back</a>							 -->
-								<button type="button" class="btn btn-lg btn-danger" id='btn-back'>Back</button>
+								<button type="button" class="btn btn-lg btn-info" id='btn-submit'>Confirm</button>							
 							</div>
 						</div>
 					

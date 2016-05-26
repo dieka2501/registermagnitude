@@ -238,10 +238,11 @@ body {
 						
 						<div class='row'>
 							<div class='col-sm-6'>
-								<button type="submit" class="btn btn-lg btn-info">Preview</button>							
+								<button type="button" class="btn btn-lg btn-danger" id='btn-reset'>Reset</button>			
 							</div>
 							<div class='col-sm-6 text-right'>
-								<button type="button" class="btn btn-lg btn-danger" id='btn-reset'>Reset</button>							
+								<button type="submit" class="btn btn-lg btn-info">Preview</button>							
+												
 							</div>
 						</div>
 					
