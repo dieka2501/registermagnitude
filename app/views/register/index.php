@@ -6,6 +6,7 @@
     <title>Magnitude Visitor's Registration</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
     <style type="text/css">
         
 /* Space out content a bit */
@@ -150,7 +151,7 @@ body {
 							<label>City / Region</label>
 							<!-- <textarea placeholder="Enter city / region Here.." rows="3" class="form-control" name='region' id='region'></textarea> -->
 							<div class="form-group">
-								<?php echo Form::select('region',$arr_region,$region,['class'=>'form-control','id'=>'region'])?>
+								<?php echo Form::select('region',$arr_region,$region,['class'=>'form-control selectpicker','id'=>'region','data-live-search'=>"true"])?>
 							</div>
 							<div class="form-group">
 								<input type="text" placeholder="Enter city / region Here.." class="form-control" name="region-text" id='region-text' value="<?php echo $region?>">	
@@ -162,7 +163,7 @@ body {
 							<div class="col-sm-12 form-group">
 								<label>Position</label>
 								<div class="form-group">
-									<?php echo Form::select('position',$arr_position,$position,['class'=>'form-control','id'=>'position'])?>
+									<?php echo Form::select('position',$arr_position,$position,['class'=>'form-control selectpicker','id'=>'position','data-live-search'=>"true"])?>
 								</div>
 								<div class="form-group">
 									<input type="text" placeholder="Enter Your Position Here.." class="form-control" name="position-text" id='position-text' value="<?php echo $position?>">
@@ -251,6 +252,9 @@ body {
 				</div>
 	</div>
 	</div>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#country-text').hide();
