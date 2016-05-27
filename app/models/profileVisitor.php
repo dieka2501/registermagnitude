@@ -36,4 +36,8 @@ class profileVisitor Extends Eloquent{
 	function status_verify(){
 		return profileVisitor::orderBy('id','DESC')->where('status',1)->get();
 	}
+
+	function delete_email_name_phone($email,$name,$phone){
+		return profileVisitor::where('email',$email)->where('nama_visitor',$name)->where('phone',$phone)->delete();
+	}
 }

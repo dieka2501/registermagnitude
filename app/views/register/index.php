@@ -133,7 +133,7 @@ body {
 						</div>
 						<div class="form-group">
 							<label>Address</label>
-							<textarea placeholder="Enter Address Here.." rows="3" class="form-control" name='address' id='address'><?php echo $address?></textarea>
+							<textarea placeholder="Enter Address Here.." rows="3" class="form-control" name='address' id='address' required="required"><?php echo $address?></textarea>
 						</div>
 						<div class="row">		
 							<div class="col-sm-12 form-group">
