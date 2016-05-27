@@ -8,7 +8,7 @@ class previewController Extends BaseController{
 		$name  				= Input::get('name');
 		$address 			= Input::get('address');
 		$company 			= Input::get('company');
-		$region 			= (Input::get('region')!= 'other' ) ? Input::get('region'):Input::get('region-text');
+		$region 			= (Input::get('country')!= 'other' ) ? Input::get('region'):Input::get('region-text');
 		$phone_number 		= Input::get('phone_number');
 		$email 				= Input::get('email');
 		$kategori 			= Input::get('kategori');
