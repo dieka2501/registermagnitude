@@ -10,6 +10,7 @@ class registerController Extends BaseController{
 		$this->business = new business;
 		$this->purpose 	= new purpose;
 		$this->info 	= new sourceInfo;
+		$this->log 		= new logtime;
 	}
 	function index(){
 		// Session::reflash();
@@ -87,7 +88,10 @@ class registerController Extends BaseController{
 				$purpose 		= Input::get('purpose');
 				$position 		= Input::get('position');
 				$source 		= Input::get('source');
+				$date_start 	= Input::get('date_start');
+				$date_end 		= Input::get('date_end');
 				$keyactive 		= md5($email.date('Ymdhis'));
+
 				$profile['interest_product']	= implode(',', $kategori);
 				$profile['bidang'] 				= $lob;
 				$profile['username'] 			= $email;
@@ -139,26 +143,33 @@ class registerController Extends BaseController{
 					// ->attach(public_path().'/pdf/'.str_replace(" ",'',$detail['nama']).'.pdf');
 				});
 
+				//Log
+				$logtime['user_id'] 		= $ids;
+				$logtime['logtime_start'] 	= $date_start;
+				$logtime['logtime_end'] 	= $date_end;
+				$logtime['created_at'] 		= date('Y-m-d H:i:s');
+				$this->log->add($logtime);
+				//End log
 				//Generate undian
-				$last = 1 ;
-				if($getdata->undian == ""){
-					$getlast = $this->profile->get_one();
-					if(count($getlast) > 0){
-						if($getlast->undian == ""){
-							$last += 0;
-						}else{
-							$last = $getlast->undian + 1;
-						}	
-					}
+				// $last = 1 ;
+				// if($getdata->undian == ""){
+				// 	$getlast = $this->profile->get_one();
+				// 	if(count($getlast) > 0){
+				// 		if($getlast->undian == ""){
+				// 			$last += 0;
+				// 		}else{
+				// 			$last = $getlast->undian + 1;
+				// 		}	
+				// 	}
 					
-				}
-				$viewundian 		= "";
-				if($last <= 10){
-					$undian['undian'] 		= $last;
-					$undian['updated_at'] 	= date('Y-m-d H:i:s');
-					$this->profile->edit($getdata->id,$undian);
-					$viewundian 			= $last;
-				}
+				// }
+				// $viewundian 		= "";
+				// if($last <= 10){
+				// 	$undian['undian'] 		= $last;
+				// 	$undian['updated_at'] 	= date('Y-m-d H:i:s');
+				// 	$this->profile->edit($getdata->id,$undian);
+				// 	$viewundian 			= $last;
+				// }
 
 				$json = array('status'=>true,
 								'alert'=>'Proses Registrasi Berhasil.',
@@ -177,6 +188,8 @@ class registerController Extends BaseController{
 				$purpose 		= Input::get('purpose');
 				$position 		= Input::get('position');
 				$source 		= Input::get('source');
+				$date_start 	= Input::get('date_start');
+				$date_end 		= Input::get('date_end');
 				$keyactive 		= md5($email.date('Ymdhis'));
 				$pass 			= substr(md5($email.date('Ymdhis')), 0,5);
 				// $cekemail 		= $this->profile->get_email($email);
@@ -270,6 +283,13 @@ class registerController Extends BaseController{
 						$curl['company']				= $getprofile->perusahaan;
 						$jsoncurl 						= json_encode($curl);
 						$this->curl->post(Config::get('app.url_mailblast').'public/api/receiver/create',$jsoncurl);
+						//Log
+						$logtime['user_id'] 		= $idsprofile;
+						$logtime['logtime_start'] 	= $date_start;
+						$logtime['logtime_end'] 	= $date_end;
+						$logtime['created_at'] 		= date('Y-m-d H:i:s');
+						$this->log->add($logtime);
+						//End log
 						
 						$json = array('status'=>true,
 								'alert'=>'Proses Registrasi Berhasil.',

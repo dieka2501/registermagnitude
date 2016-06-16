@@ -168,6 +168,12 @@ body {
 							<label>Source Information</label>
 							<input type="text" placeholder="Enter Your Source Information" class="form-control" name='source' id="source" readonly="readonly" value="<?php echo $source?>">
 						</div>
+						
+							<input type="hidden" placeholder="Enter Your Source Information" class="form-control" name='date_start' id="date_start" readonly="readonly" value="<?php echo $date_start?>">
+						
+						
+							<input type="hidden" placeholder="Enter Your Source Information" class="form-control" name='date_end' id="date_end" readonly="readonly" value="<?php echo $date_end?>">
+						
 							<label>Interest Product</label>
 							<?php if(count($kategori) > 0):?>
 								<?php foreach($kategori as $kat): ?>
@@ -236,6 +242,8 @@ body {
 			var purpose 	= $('#purpose').val();
 			var position 	= $('#position').val();
 			var source  	= $('#source').val();
+			var date_start 	= $('#date_start').val();
+			var date_end 	= $('#date_end').val();
 			var kat 		= [];
 			$('.kategori').each(function(){
 				if($(this).val() != 'undefined'){
@@ -257,7 +265,9 @@ body {
 				'purpose':purpose,
 				'position':position,
 				'company':company,
-				'source':source
+				'source':source,
+				'date_start':date_start,
+				'date_end':date_end
 
 			},function(data){
 				// console.log(data);
@@ -265,19 +275,19 @@ body {
 					var htmlalert = "<div class='alert alert-success' role='alert'>"+data.alert+"</div>";
 					$('.kategori').prop('checked',false);
 					$('#notip').html(htmlalert).show().fadeOut(10000);
-					$('#name').val('');
-					$('#email').val('');
-					$('#address').val('');
-					$('#company').val('');
-					$('#region').val('');
-					$('#phone_number').val('');
-					$('#country').val('');
-					$('#nb').val('');
-					$('#purpose').val('');
-					$('#position').val('');
-					$('#company').val('');
-					$('#source').val('');
-					$('#ids').val('');
+					// $('#name').val('');
+					// $('#email').val('');
+					// $('#address').val('');
+					// $('#company').val('');
+					// $('#region').val('');
+					// $('#phone_number').val('');
+					// $('#country').val('');
+					// $('#nb').val('');
+					// $('#purpose').val('');
+					// $('#position').val('');
+					// $('#company').val('');
+					// $('#source').val('');
+					// $('#ids').val('');
 					var win = window.open('<?php Config::get("app.url")?>print/'+data.data.id,'__blank');
 
 					if(win){

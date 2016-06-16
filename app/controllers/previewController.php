@@ -18,6 +18,8 @@ class previewController Extends BaseController{
 		$purpose 			= (Input::get('purpose') != 'other')? Input::get('purpose'): Input::get('purpose-text');
 		$position 			= (Input::get('position') != 'other') ? Input::get('position'):Input::get('position-text');
 		$source 			= (Input::get('source') != 'other')?Input::get('source'):Input::get('source-text');
+		$date_start			= date('Y-m-d H:i:s',strtotime(Input::get('date_start')));
+		$date_end			= date('Y-m-d H:i:s',strtotime(Input::get('date_end')));
 		// Session::flash('ids',$ids);
 		// Session::flash('name',$name);
 		// Session::flash('address',$address);
@@ -46,6 +48,9 @@ class previewController Extends BaseController{
 		$view['purpose']		= $purpose;
 		$view['source']			= $source;
 		$view['position']		= $position;
+		$view['date_start'] 	= $date_start;
+		$view['date_end'] 		= $date_end;
+
 		// var_dump(Session::all());
 		return View::make('preview/index',$view);
 

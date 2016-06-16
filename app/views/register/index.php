@@ -107,13 +107,15 @@ body {
     <h1 class="well">Visitor Registration Form</h1>
 	<div class="col-lg-12 well">
 	<div class="row">
-				<form method="POST" action='<?php echo Config::get("app.url") ?>public/preview'>
+				<form method="POST" action='<?php echo Config::get("app.url") ?>public/preview' id='frm-register'>
 					<div id='notip'></div>
 					<div class="col-sm-12">
 						<div class="form-group">
 							<label>Email Address</label>
 							<input type="email" placeholder="Enter Email Address Here.." class="form-control" name='email' id='email' value="<?php echo $email?>" required> 
 							<input type="hidden" placeholder="" class="form-control" name='ids' id='ids' value="<?php echo $ids?>">
+							<input type="hidden" name="date_start" id='date_start'>
+							<input type="hidden" name="date_end" id='date_end'>
 						</div>	
 						<div class="row">
 							<div class="col-sm-12 form-group">
@@ -242,7 +244,7 @@ body {
 								<button type="button" class="btn btn-lg btn-danger" id='btn-reset'>Reset</button>			
 							</div>
 							<div class='col-sm-6 text-right'>
-								<button type="submit" class="btn btn-lg btn-info">Preview</button>							
+								<button type="buuton" class="btn btn-lg btn-info" id="btn-submit">Preview</button>							
 												
 							</div>
 						</div>
@@ -278,7 +280,9 @@ body {
 		$('#region').change(function(){
 			var region = $(this).val();
 			if(region == 'other'){
-				$('#region-text').show();				
+				$('#region-text').show();
+				var dataidresgion = $('.dropdown-toggle').attr('data-id');		
+				console.log(dataidresgion);		
 			}else{
 				$('#region-text').hide();				
 				$('#region-text').val('');
@@ -428,75 +432,6 @@ body {
 			});
 		});
 
-		// $('#btn-submit').click(function(){
-		// 	var name 		= $('#name').val();
-		// 	var email 		= $('#email').val();
-		// 	var address 	= $('#address').val();
-		// 	var company 	= $('#company').val();
-		// 	var phone 		= $('#phone_number').val();
-		// 	var region 		= $('#region').val();
-		// 	var ids 		= $('#ids').val();
-		// 	var lob 		= $('#lob').val();
-		// 	var country 	= $('#country').val();
-		// 	var company 	= $('#company').val();
-		// 	var nb 			= $('#nb').val();
-		// 	var purpose 	= $('#purpose').val();
-		// 	var position 	= $('#position').val();
-		// 	var source  	= $('#source').val();
-		// 	var kat 		= [];
-		// 	$('.kategori:checked').each(function(){
-		// 		if($(this).val() != 'undefined'){
-		// 			kat.push($(this).val()); 	
-		// 		}
-		// 	});
-		// 	$.post('<?php echo Config::get("app.url")?>public/register',{
-		// 		'name' : name,
-		// 		'address' : address,
-		// 		'company' : company,
-		// 		'email' : email,
-		// 		'phone_number':phone,
-		// 		'region':region,
-		// 		'ids':ids,
-		// 		'kategori':kat,
-		// 		'lob':lob,
-		// 		'country':country,
-		// 		'nb':nb,
-		// 		'purpose':purpose,
-		// 		'position':position,
-		// 		'company':company,
-		// 		'source':source
-
-		// 	},function(data){
-		// 		console.log(data);
-		// 		if(data.status){
-		// 			var htmlalert = "<div class='alert alert-success' role='alert'>"+data.alert+"</div>";
-		// 			$('.kategori').prop('checked',false);
-		// 			$('#notip').html(htmlalert).show().fadeOut(10000);
-		// 			$('#name').val('');
-		// 			$('#email').val('');
-		// 			$('#address').val('');
-		// 			$('#company').val('');
-		// 			$('#region').val('');
-		// 			$('#phone_number').val('');
-		// 			$('#country').val('');
-		// 			$('#nb').val('');
-		// 			$('#lob').val('');
-		// 			$('#purpose').val('');
-		// 			$('#position').val('');
-		// 			$('#company').val('');
-		// 			$('#ids').val('');
-		// 			var win = window.open('<?php Config::get("app.url")?>print/'+data.data.id,'__blank');
-		// 			if(win){
-		// 				win.focus();
-		// 			}else{
-		// 				alert('Please Allow Popups For This Site');
-		// 			}
-		// 		}else{
-		// 			var htmlalert = "<div class='alert alert-danger' role='alert'>"+data.alert+"</div>";
-		// 			$('#notip').html(htmlalert);
-		// 		}	
-		// 	});
-		// });
 
 		$(this).ajaxStart(function(data){
 			$('#btn-submit').html('Loading....');
@@ -521,6 +456,41 @@ body {
 			$('#company').val('');
 			$('#ids').val('');
 		});
+	});
+
+	$(document).ready(function(){
+			var i = 0;
+			$(this).keyup(function(){
+			 	i++;
+			 	if(i==1){
+			 		var d 		= new Date();
+				 	var year  	= d.getFullYear();
+				 	var date 	= d.getDate();
+				 	var month 	= d.getMonth() +1;	
+				 	var hours 	= d.getHours();
+				 	var minutes = d.getMinutes();
+				 	var second  = d.getSeconds();
+
+				 	$('#date_start').val(year+"-"+month+"-"+date+" "+hours+":"+minutes+":"+second);	
+			 	}
+			 	
+			 	// alert(month+"-"+date+"-"+year);
+
+			});
+
+			$('#btn-submit').click(function(){
+				var d 		= new Date();
+			 	var year  	= d.getFullYear();
+			 	var date 	= d.getDate();
+			 	var month 	= d.getMonth() +1;	
+			 	var hours 	= d.getHours();
+			 	var minutes = d.getMinutes();
+			 	var second  = d.getSeconds();
+
+			 	$('#date_end').val(year+"-"+month+"-"+date+" "+hours+":"+minutes+":"+second);	
+			 	$('#frm-register').submit();
+
+			});
 	});
 </script>
 </body>
