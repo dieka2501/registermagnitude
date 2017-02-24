@@ -95,12 +95,10 @@ body {
 <body>
 <div class="container">
 	<div class="row">
-		<div class="col-md-6 text-left ">
-			<img src="<?php echo Config::get('app.url')?>assets/image/ibt.jpg" width="200" class='img-responsive'>
+		<div class="col-md-12 text-left ">
+			<img src="<?php echo Config::get('app.url')?>assets/image/ctc.jpg" width="800" class='img-responsive'>
 		</div>
- 		<div class="col-md-6 text-right">
-			<img src="<?php echo Config::get('app.url')?>assets/image/dite.jpg" width="240" class='img-responsive'>
-		</div>
+ 		
 	</div>
 </div>
 <div class="container">

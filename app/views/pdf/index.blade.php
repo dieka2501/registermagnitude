@@ -9,7 +9,7 @@
 			  -o-background-size: cover;
 			  background-size: cover;
 			  width: 700px;
-			  height: 900px;
+			  height: 1000px;
 			}
 			p{
 				margin: 0px;
@@ -19,7 +19,7 @@
 </head>
 <body>
 
-	<div style="margin-top:550px;">
+	<div style="margin-top:500px; padding-top: 50px">
 		<table border="0" width="90%" >
 			<tr>
 				<td  width="50%" align="center" valign="top" height="400px"> 		
