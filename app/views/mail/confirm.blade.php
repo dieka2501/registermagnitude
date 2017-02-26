@@ -74,7 +74,7 @@
 	  			<p style="font-size: 11px;
     	color: #555555;">Halo {{$nama}},</p>
 	  			<p style="font-size: 11px;
-    	color: #555555;">Anda telah mendaftar sebagai pengunjung IndoBuildTech 2016.</p>
+    	color: #555555;">Anda telah mendaftar sebagai pengunjung Cemat 2017.</p>
 	  			<p style="font-size: 11px;
     	color: #555555;">Silahkan cetak file yang kami sertakan dalam email ini.</p>
 	  			<div class="details" style="background: #E9F0FA;
@@ -84,7 +84,7 @@
 	  			<p>Jangan balas email ini.</p>
 	  			<div class="copyright" style="margin-top: 50px;">
 	  			<p style="line-height: 5px;">Terima Kasih,</p>
-	  			<p style="line-height: 5px;">IndoBuildTech 2016</p>
+	  			<p style="line-height: 5px;">Cemat 2017</p>
 	  			</div>
 	  		</div>
 	  	</div>

@@ -87,7 +87,7 @@
 	  			<p>Jangan balas email ini..</p>
 	  			<div class="copyright" style="margin-top: 50px;">
 	  			<p style="line-height: 5px;">Terima Kasih,</p>
-	  			<p style="line-height: 5px;">IndoBuildTech 2016</p>
+	  			<p style="line-height: 5px;">Cemat 2017</p>
                 <p style="line-height: 5px;">Powered By Data Driven Asia</p>
 	  			</div>
 	  		</div>
