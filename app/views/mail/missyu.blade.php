@@ -74,9 +74,9 @@
 	  			<p style="font-size: 11px;
     	color: #555555;">Halo <?php echo $name?>,</p>
 	  			<p style="font-size: 11px;
-    	color: #555555;">Anda melewatkan pameran Cemat 2017 hari ini. </p>
+    	color: #555555;">Anda melewatkan pameran CeMAT Southeast Asia 2017 hari ini. </p>
 	  			<p style="font-size: 11px;
-    	color: #555555;">Kami sangat mengharapkan kehadiran anda di pameran Cemat 2017</p>
+    	color: #555555;">Kami sangat mengharapkan kehadiran anda di pameran CeMAT Southeast Asia 2017</p>
 	  			<div class="details" style="background: #E9F0FA;
     	padding: 20px;">
 	  				
@@ -84,7 +84,7 @@
 	  			<p>Jangan balas email ini..</p>
 	  			<div class="copyright" style="margin-top: 50px;">
 	  			<p style="line-height: 5px;">Terima Kasih,</p>
-	  			<p style="line-height: 5px;">Cemat 2017</p>
+	  			<p style="line-height: 5px;">CeMAT Southeast Asia 2017</p>
 	  			</div>
 	  		</div>
 	  	</div>

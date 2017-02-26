@@ -74,7 +74,7 @@
 	  			<p style="font-size: 11px;
     	color: #555555;">Halo {{$name}},</p>
 	  			<p style="font-size: 11px;
-    	color: #555555;">Kami telah mencatat anda sebagai peserta <i>technical meeting</i> Cemat 2017.</p>
+    	color: #555555;">Kami telah mencatat anda sebagai peserta <i>technical meeting</i> CeMAT Southeast Asia 2017.</p>
 	  			<p style="font-size: 11px;
     	color: #555555;">Silahkan cetak file yang kami sertakan, dan bawa ke acara, sebagai tiket masuk.</p>
 	  			<div class="details" style="background: #E9F0FA;
@@ -84,7 +84,7 @@
 	  			<p>Jangan balas email ini..</p>
 	  			<div class="copyright" style="margin-top: 50px;">
 	  			<p style="line-height: 5px;">Terima Kasih,</p>
-	  			<p style="line-height: 5px;">Cemat 2017</p>
+	  			<p style="line-height: 5px;">CeMAT Southeast Asia 2017</p>
 	  			</div>
 	  		</div>
 	  	</div>
