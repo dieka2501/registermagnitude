@@ -60,7 +60,7 @@
   		<div class="header" style="width: 500px;
     	padding: 20px 0px;
     	margin: 0 auto;">
-  			<img src="<?php echo Config::get('app.url') ?>assets/image/logoindobuildtech.png" alt="logo" style="max-height: 60px;">
+  			<img src="<?php echo Config::get('app.url') ?>/assets/image/ctc.jpg" alt="logo" style="max-height: 60px;">
   		</div>
 	  	<div class="wrapper" style="width: 500px;
     	min-height: 400px;
@@ -74,7 +74,7 @@
 	  			<p style="font-size: 11px;
     	color: #555555;">Halo {{$nama}},</p>
 	  			<p style="font-size: 11px;
-    	color: #555555;">Anda telah mendaftar sebagai pengunjung CeMAT Southeast Asia.</p>
+    	color: #555555;">Anda telah mendaftar sebagai pengunjung Cemat-Transasia-ColdChain 2017.</p>
 	  			<p style="font-size: 11px;
     	color: #555555;">Silahkan cetak file yang kami sertakan dalam email ini.</p>
 	  			<div class="details" style="background: #E9F0FA;

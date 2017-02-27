@@ -60,7 +60,7 @@
   		<div class="header" style="width: 500px;
     	padding: 20px 0px;
     	margin: 0 auto;">
-  			<img src="<?php echo config('app.url') ?>public/img/logoindobuildtech.png" alt="logo" style="max-height: 60px;">
+  			<img src="<?php echo config('app.url') ?>public/assets/image/ctc.jpg" alt="logo" style="max-height: 60px;">
   		</div>
 	  	<div class="wrapper" style="width: 500px;
     	min-height: 400px;
