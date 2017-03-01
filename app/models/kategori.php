@@ -5,6 +5,6 @@ class kategori Extends Eloquent{
 
 	}
 	function get_all(){
-		return DB::table($this->table)->get();
+		return DB::table($this->table)->orderBy('nama_kategori','ASC')->get();
 	}
 }
